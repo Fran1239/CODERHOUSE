@@ -35,6 +35,7 @@ namespace CRM_UI
             labelTitulo2.BackColor = Color.Transparent;
             labelText1.Parent = pBoxFondo2;
             labelText1.BackColor = Color.Transparent;
+
         }
     }
 }
