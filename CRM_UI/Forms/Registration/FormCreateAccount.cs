@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CRM_DAL.DTO.User_DTO;
+using CRM_UI.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,33 +24,57 @@ namespace CRM_UI
             tBoxConfirmPassword.UseSystemPasswordChar = !tBoxConfirmPassword.UseSystemPasswordChar;
         }
 
-        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        private async void buttonCreateAccount_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
-            formMain.AbrirFormEnPanel(new FormCRM());
-            if (formMain != null)
+            UserWriteDTO userWriteDTO = new UserWriteDTO();
+            userWriteDTO.Names = tBoxName.Text;
+            userWriteDTO.UserNames = tBoxUsername.Text;
+            userWriteDTO.Emails = tBoxEmal.Text;
+            userWriteDTO.LastNames = tBoxLastName.Text;
+            userWriteDTO.Passwords = tBoxPassword.Text;
+            userWriteDTO.ConfirmPassword = tBoxConfirmPassword.Text;
+
+            if(userWriteDTO.Passwords != userWriteDTO.ConfirmPassword)
             {
-                formMain.Show();
-                formMain.AbrirFormCRM();
+
+            }
+            else
+            {
+                string url = "https://localhost:7005/api/User";
+                string Json = JsonConvert.SerializeObject(userWriteDTO);
+
+                var data = await API_Connection.GetInstance().PostAsync(url, Json);
+
+                if (data == "SUCCESSFULLY_USER_CREATION")
+                {
+
+                    this.Close();
+                    FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
+                    formMain.AbrirFormEnPanel(new FormCRM());
+                    if (formMain != null)
+                    {
+                        formMain.Show();
+                        formMain.AbrirFormCRM();
+                    }
+                }
             }
         }
 
-        private void FormCreateAccount_Load(object sender, EventArgs e)
+        private async void FormCreateAccount_Load(object sender, EventArgs e)
         {
-            labelTitulo2.Parent = pictureBoxFondo;
+            labelTitulo2.Parent = pBoxFondo;
             labelTitulo2.BackColor = Color.Transparent;
-            labelText1.Parent = ;
+            labelText1.Parent = pBoxFondo;
             labelText1.BackColor = Color.Transparent;
 
-            pb_eyeOpen1.Parent = ;
+            pb_eyeOpen1.Parent = pBoxFondo;
             pb_eyeOpen1.BackColor = Color.Transparent;
-            pb_eyeClosed1.Parent = ;
+            pb_eyeClosed1.Parent = pBoxFondo;
             pb_eyeClosed1.BackColor = Color.Transparent;
 
-            pb_eyeOpen2.Parent = ;
+            pb_eyeOpen2.Parent = pBoxFondo;
             pb_eyeOpen2.BackColor = Color.Transparent;
-            pb_eyeClosed2.Parent = ;
+            pb_eyeClosed2.Parent = pBoxFondo;
             pb_eyeClosed2.BackColor = Color.Transparent;
 
         }
@@ -85,5 +112,14 @@ namespace CRM_UI
 
         }
 
+        private void pBoxFondo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,5 +17,6 @@ namespace CRM_DAL.DTO.User_DTO
         public string? Emails { get; set; }
 
         public string? Passwords { get; set; }
+        public string? ConfirmPassword { get; set; }
     }
 }

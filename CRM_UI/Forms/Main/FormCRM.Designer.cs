@@ -132,7 +132,7 @@
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(115, 208);
+            pictureBox4.Location = new Point(122, 211);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(366, 227);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -154,7 +154,7 @@
             // 
             pictureBoxCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxCerrarSesion.Image = (Image)resources.GetObject("pictureBoxCerrarSesion.Image");
-            pictureBoxCerrarSesion.Location = new Point(904, 15);
+            pictureBoxCerrarSesion.Location = new Point(898, 16);
             pictureBoxCerrarSesion.Name = "pictureBoxCerrarSesion";
             pictureBoxCerrarSesion.Size = new Size(47, 42);
             pictureBoxCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,7 +170,7 @@
             label4.FlatStyle = FlatStyle.Flat;
             label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(882, 53);
+            label4.Location = new Point(876, 60);
             label4.Name = "label4";
             label4.Size = new Size(91, 17);
             label4.TabIndex = 5;
@@ -214,11 +214,13 @@
             buttonPerfil.FlatStyle = FlatStyle.Flat;
             buttonPerfil.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonPerfil.ForeColor = Color.White;
+            buttonPerfil.Image = (Image)resources.GetObject("buttonPerfil.Image");
+            buttonPerfil.ImageAlign = ContentAlignment.MiddleLeft;
             buttonPerfil.Location = new Point(0, 3);
             buttonPerfil.Name = "buttonPerfil";
             buttonPerfil.Size = new Size(250, 60);
             buttonPerfil.TabIndex = 6;
-            buttonPerfil.Text = "               Perfil";
+            buttonPerfil.Text = "           Perfil";
             buttonPerfil.TextAlign = ContentAlignment.MiddleLeft;
             buttonPerfil.UseVisualStyleBackColor = true;
             // 
@@ -231,11 +233,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(0, 63);
             button1.Name = "button1";
             button1.Size = new Size(250, 60);
             button1.TabIndex = 5;
-            button1.Text = "          Configuración";
+            button1.Text = "  Configuración";
             button1.UseVisualStyleBackColor = true;
             // 
             // panelButtonsUsuarios
@@ -293,11 +297,13 @@
             buttonUsuarios.FlatStyle = FlatStyle.Flat;
             buttonUsuarios.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonUsuarios.ForeColor = Color.White;
+            buttonUsuarios.Image = (Image)resources.GetObject("buttonUsuarios.Image");
+            buttonUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
             buttonUsuarios.Location = new Point(0, 428);
             buttonUsuarios.Name = "buttonUsuarios";
             buttonUsuarios.Size = new Size(250, 60);
             buttonUsuarios.TabIndex = 8;
-            buttonUsuarios.Text = "               Usuarios";
+            buttonUsuarios.Text = "           Usuarios";
             buttonUsuarios.TextAlign = ContentAlignment.MiddleLeft;
             buttonUsuarios.UseVisualStyleBackColor = true;
             buttonUsuarios.Click += buttonUsuarios_Click;
@@ -357,11 +363,14 @@
             buttonProductos.FlatStyle = FlatStyle.Flat;
             buttonProductos.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonProductos.ForeColor = Color.White;
+            buttonProductos.Image = (Image)resources.GetObject("buttonProductos.Image");
+            buttonProductos.ImageAlign = ContentAlignment.MiddleLeft;
             buttonProductos.Location = new Point(0, 289);
             buttonProductos.Name = "buttonProductos";
             buttonProductos.Size = new Size(250, 60);
             buttonProductos.TabIndex = 6;
-            buttonProductos.Text = "  Productos";
+            buttonProductos.Text = "           Productos";
+            buttonProductos.TextAlign = ContentAlignment.MiddleLeft;
             buttonProductos.UseVisualStyleBackColor = true;
             buttonProductos.Click += buttonProductos_Click;
             // 
@@ -426,7 +435,7 @@
             buttonVentas.Name = "buttonVentas";
             buttonVentas.Size = new Size(250, 60);
             buttonVentas.TabIndex = 4;
-            buttonVentas.Text = "               Ventas";
+            buttonVentas.Text = "           Ventas";
             buttonVentas.TextAlign = ContentAlignment.MiddleLeft;
             buttonVentas.UseVisualStyleBackColor = true;
             buttonVentas.Click += buttonVentas_Click;

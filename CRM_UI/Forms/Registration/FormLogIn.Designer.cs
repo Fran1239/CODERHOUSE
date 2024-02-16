@@ -63,7 +63,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1214, 742);
+            panel1.Size = new Size(1212, 742);
             panel1.TabIndex = 0;
             // 
             // labelTitulo
@@ -74,7 +74,7 @@
             labelTitulo.FlatStyle = FlatStyle.Flat;
             labelTitulo.Font = new Font("Century Gothic", 120F, FontStyle.Regular, GraphicsUnit.Point);
             labelTitulo.ForeColor = Color.White;
-            labelTitulo.Location = new Point(320, 188);
+            labelTitulo.Location = new Point(326, 188);
             labelTitulo.Name = "labelTitulo";
             labelTitulo.Size = new Size(756, 191);
             labelTitulo.TabIndex = 1;
@@ -86,9 +86,9 @@
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(45, 36);
+            pictureBox4.Location = new Point(56, 65);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(489, 314);
+            pictureBox4.Size = new Size(489, 286);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
@@ -97,7 +97,7 @@
             // 
             pb_eyeClosed.Anchor = AnchorStyles.None;
             pb_eyeClosed.Image = Properties.Resources.esconder;
-            pb_eyeClosed.Location = new Point(757, 449);
+            pb_eyeClosed.Location = new Point(756, 449);
             pb_eyeClosed.Name = "pb_eyeClosed";
             pb_eyeClosed.Size = new Size(52, 39);
             pb_eyeClosed.SizeMode = PictureBoxSizeMode.Zoom;
@@ -109,7 +109,7 @@
             // 
             pb_eyeOpen.Anchor = AnchorStyles.None;
             pb_eyeOpen.Image = Properties.Resources.ojo;
-            pb_eyeOpen.Location = new Point(757, 449);
+            pb_eyeOpen.Location = new Point(756, 449);
             pb_eyeOpen.Name = "pb_eyeOpen";
             pb_eyeOpen.Size = new Size(52, 39);
             pb_eyeOpen.SizeMode = PictureBoxSizeMode.Zoom;
@@ -122,7 +122,7 @@
             tBoxPassword.Anchor = AnchorStyles.None;
             tBoxPassword.BackColor = Color.Lavender;
             tBoxPassword.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tBoxPassword.Location = new Point(463, 454);
+            tBoxPassword.Location = new Point(462, 454);
             tBoxPassword.Name = "tBoxPassword";
             tBoxPassword.PlaceholderText = "Password";
             tBoxPassword.Size = new Size(288, 31);
@@ -134,7 +134,7 @@
             tBoxUsername.Anchor = AnchorStyles.None;
             tBoxUsername.BackColor = Color.Lavender;
             tBoxUsername.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tBoxUsername.Location = new Point(463, 397);
+            tBoxUsername.Location = new Point(462, 397);
             tBoxUsername.Name = "tBoxUsername";
             tBoxUsername.PlaceholderText = "Username";
             tBoxUsername.Size = new Size(288, 31);
@@ -147,7 +147,7 @@
             labelTittle.AutoSize = true;
             labelTittle.BackColor = Color.Transparent;
             labelTittle.Font = new Font("Century Gothic", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTittle.Location = new Point(491, 173);
+            labelTittle.Location = new Point(490, 173);
             labelTittle.Name = "labelTittle";
             labelTittle.Size = new Size(0, 78);
             labelTittle.TabIndex = 1;
@@ -165,7 +165,7 @@
             buttonCreateAccount.FlatStyle = FlatStyle.Flat;
             buttonCreateAccount.Font = new Font("Century Gothic", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCreateAccount.ForeColor = Color.SlateBlue;
-            buttonCreateAccount.Location = new Point(463, 590);
+            buttonCreateAccount.Location = new Point(462, 590);
             buttonCreateAccount.Name = "buttonCreateAccount";
             buttonCreateAccount.Size = new Size(288, 84);
             buttonCreateAccount.TabIndex = 1;
@@ -185,7 +185,7 @@
             buttonLogIn.FlatStyle = FlatStyle.Flat;
             buttonLogIn.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonLogIn.ForeColor = Color.SlateBlue;
-            buttonLogIn.Location = new Point(511, 516);
+            buttonLogIn.Location = new Point(510, 516);
             buttonLogIn.Name = "buttonLogIn";
             buttonLogIn.Size = new Size(193, 58);
             buttonLogIn.TabIndex = 1;
@@ -200,7 +200,7 @@
             pBoxFondo1.Image = (Image)resources.GetObject("pBoxFondo1.Image");
             pBoxFondo1.Location = new Point(0, 0);
             pBoxFondo1.Name = "pBoxFondo1";
-            pBoxFondo1.Size = new Size(1214, 742);
+            pBoxFondo1.Size = new Size(1212, 742);
             pBoxFondo1.SizeMode = PictureBoxSizeMode.StretchImage;
             pBoxFondo1.TabIndex = 0;
             pBoxFondo1.TabStop = false;
@@ -209,7 +209,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1214, 742);
+            ClientSize = new Size(1212, 742);
             Controls.Add(panel1);
             Name = "FormLogIn";
             Text = "FormLogIn";

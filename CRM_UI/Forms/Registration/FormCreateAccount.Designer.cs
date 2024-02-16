@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreateAccount));
             buttonCreateAccount = new Button();
             panel1 = new Panel();
             pb_eyeOpen2 = new PictureBox();
@@ -43,12 +42,14 @@
             tBoxUsername = new TextBox();
             labelText1 = new Label();
             labelTitulo2 = new Label();
+            pBoxFondo = new PictureBox();
             pBoxFondo2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeClosed2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeClosed1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBoxFondo2).BeginInit();
             SuspendLayout();
             // 
@@ -87,6 +88,7 @@
             panel1.Controls.Add(labelText1);
             panel1.Controls.Add(labelTitulo2);
             panel1.Controls.Add(buttonCreateAccount);
+            panel1.Controls.Add(pBoxFondo);
             panel1.Controls.Add(pBoxFondo2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -153,6 +155,7 @@
             tBoxConfirmPassword.Size = new Size(288, 31);
             tBoxConfirmPassword.TabIndex = 10;
             tBoxConfirmPassword.TextAlign = HorizontalAlignment.Center;
+            tBoxConfirmPassword.TextChanged += tBoxConfirmPassword_TextChanged;
             // 
             // tBoxPassword
             // 
@@ -245,10 +248,21 @@
             labelTitulo2.TextAlign = ContentAlignment.TopCenter;
             labelTitulo2.Click += labelTitulo2_Click;
             // 
+            // pBoxFondo
+            // 
+            pBoxFondo.Dock = DockStyle.Fill;
+            pBoxFondo.Image = Properties.Resources.fondo;
+            pBoxFondo.Location = new Point(0, 0);
+            pBoxFondo.Name = "pBoxFondo";
+            pBoxFondo.Size = new Size(1167, 700);
+            pBoxFondo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pBoxFondo.TabIndex = 3;
+            pBoxFondo.TabStop = false;
+            pBoxFondo.Click += pBoxFondo_Click;
+            // 
             // pBoxFondo2
             // 
             pBoxFondo2.Dock = DockStyle.Fill;
-            pBoxFondo2.Image = (Image)resources.GetObject("pBoxFondo2.Image");
             pBoxFondo2.Location = new Point(0, 0);
             pBoxFondo2.Name = "pBoxFondo2";
             pBoxFondo2.Size = new Size(1167, 700);
@@ -271,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeClosed2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeClosed1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxFondo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBoxFondo2).EndInit();
             ResumeLayout(false);
         }
@@ -291,5 +306,6 @@
         private PictureBox pb_eyeClosed1;
         private PictureBox pb_eyeOpen2;
         private PictureBox pb_eyeOpen1;
+        private PictureBox pBoxFondo;
     }
 }
