@@ -6,18 +6,9 @@ using System.Threading.Tasks;
 
 namespace CRM_DAL.DTO.User_DTO
 {
-    public class UserWriteDTO
+    public class UserRequestDTO
     {
-        public string? Names { get; set; }
-
-        public string? LastNames { get; set; }
-
         public string? UserNames { get; set; }
-
-        public string? Emails { get; set; }
-
         public string? Passwords { get; set; }
-
-        public string? ConfirmPassword { get; set; }
     }
 }

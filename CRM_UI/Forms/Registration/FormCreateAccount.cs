@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,20 +35,24 @@ namespace CRM_UI
             userWriteDTO.Passwords = tBoxPassword.Text;
             userWriteDTO.ConfirmPassword = tBoxConfirmPassword.Text;
 
-            if(userWriteDTO.Passwords != userWriteDTO.ConfirmPassword)
+            if (userWriteDTO.Names == string.Empty || userWriteDTO.UserNames == string.Empty || userWriteDTO.Emails == string.Empty || userWriteDTO.LastNames == string.Empty || userWriteDTO.Passwords == string.Empty || userWriteDTO.ConfirmPassword == string.Empty)
             {
+                MessageBox.Show("THERE IS MISSING INFORMATION");
+                return;
+            }
 
+            if (userWriteDTO.Passwords != userWriteDTO.ConfirmPassword)
+            {
+                MessageBox.Show("PASSWORDS DO NOT MATCH");
             }
             else
             {
-                string url = "https://localhost:7005/api/User";
+                string url = "https://localhost:7005/api/User/create-user";
                 string Json = JsonConvert.SerializeObject(userWriteDTO);
-
                 var data = await API_Connection.GetInstance().PostAsync(url, Json);
 
                 if (data == "SUCCESSFULLY_USER_CREATION")
                 {
-
                     this.Close();
                     FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
                     formMain.AbrirFormEnPanel(new FormCRM());
@@ -57,6 +62,11 @@ namespace CRM_UI
                         formMain.AbrirFormCRM();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("FAIL CREATING USER");
+                }
+
             }
         }
 
@@ -76,6 +86,9 @@ namespace CRM_UI
             pb_eyeOpen2.BackColor = Color.Transparent;
             pb_eyeClosed2.Parent = pBoxFondo;
             pb_eyeClosed2.BackColor = Color.Transparent;
+
+            pictureBoxReturn.Parent = pBoxFondo;
+            pictureBoxReturn.BackColor = Color.Transparent;
 
         }
 
@@ -120,6 +133,23 @@ namespace CRM_UI
         private void tBoxConfirmPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
+            formMain.AbrirFormEnPanel(new FormLogIn());
+            if (formMain != null)
+            {
+                formMain.Show();
+                formMain.AbrirFormLogIn();
+            }
         }
     }
 }

@@ -3,11 +3,11 @@ using CRM_DAL.Models;
 
 namespace CRM_DAL.Services
 {
-    public class ProductData
+    public class ProductService
     {
         private readonly CoderContext _coderContext;
 
-        public ProductData()
+        public ProductService()
         {
             _coderContext = new CoderContext();
         }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CRM_DAL.DTO.User_DTO;
+using CRM_UI.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,16 +38,32 @@ namespace CRM_UI
         }
 
 
-        private void buttonLogIn_Click(object sender, EventArgs e)
+        private async void buttonLogIn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
-            formMain.AbrirFormEnPanel(new FormCRM());
-            if (formMain != null)
+            UserRequestDTO userRequestDTO = new UserRequestDTO();
+            userRequestDTO.UserNames = tBoxUsername.Text;
+            userRequestDTO.Passwords = tBoxPassword.Text;
+
+            string url = "https://localhost:7005/api/User/login";
+            string Json = JsonConvert.SerializeObject(userRequestDTO);
+            var data = await API_Connection.GetInstance().PostAsync(url, Json);
+
+            if (data == "SUCCESSFULLY_LOGIN")
             {
-                formMain.Show();
-                formMain.AbrirFormCRM();
+                this.Close();
+                FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
+                formMain.AbrirFormEnPanel(new FormCRM());
+                if (formMain != null)
+                {
+                    formMain.Show();
+                    formMain.AbrirFormCRM();
+                }
             }
+            else
+            {
+                MessageBox.Show("INVALID CREDENTIAL");
+            }
+
         }
 
         private void buttonCreateAccount_Click(object sender, EventArgs e)
@@ -74,6 +93,11 @@ namespace CRM_UI
         }
 
         private void labelTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBoxUsername_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -97,9 +97,9 @@
             // 
             pb_eyeClosed.Anchor = AnchorStyles.None;
             pb_eyeClosed.Image = Properties.Resources.esconder;
-            pb_eyeClosed.Location = new Point(756, 449);
+            pb_eyeClosed.Location = new Point(756, 454);
             pb_eyeClosed.Name = "pb_eyeClosed";
-            pb_eyeClosed.Size = new Size(52, 39);
+            pb_eyeClosed.Size = new Size(40, 30);
             pb_eyeClosed.SizeMode = PictureBoxSizeMode.Zoom;
             pb_eyeClosed.TabIndex = 3;
             pb_eyeClosed.TabStop = false;
@@ -109,9 +109,9 @@
             // 
             pb_eyeOpen.Anchor = AnchorStyles.None;
             pb_eyeOpen.Image = Properties.Resources.ojo;
-            pb_eyeOpen.Location = new Point(756, 449);
+            pb_eyeOpen.Location = new Point(756, 454);
             pb_eyeOpen.Name = "pb_eyeOpen";
-            pb_eyeOpen.Size = new Size(52, 39);
+            pb_eyeOpen.Size = new Size(40, 30);
             pb_eyeOpen.SizeMode = PictureBoxSizeMode.Zoom;
             pb_eyeOpen.TabIndex = 1;
             pb_eyeOpen.TabStop = false;
@@ -140,6 +140,7 @@
             tBoxUsername.Size = new Size(288, 31);
             tBoxUsername.TabIndex = 1;
             tBoxUsername.TextAlign = HorizontalAlignment.Center;
+            tBoxUsername.TextChanged += tBoxUsername_TextChanged;
             // 
             // labelTittle
             // 

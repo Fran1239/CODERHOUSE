@@ -34,5 +34,9 @@ namespace CRM_UI
         {
             AbrirFormEnPanel(new FormCRM());
         }
+        public void AbrirFormLogIn()
+        {
+            AbrirFormEnPanel(new FormLogIn());
+        }
     }
 }

@@ -1,19 +1,15 @@
 ﻿using CRM_DAL.Database;
 using CRM_DAL.DTO.User_DTO;
 using CRM_DAL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRM_DAL.Services
 {
-    public  class UserData
+    public  class UserService
     {
         private readonly CoderContext _coderContext;
 
-        public UserData()
+        public UserService()
         {
             _coderContext = new CoderContext();
         }
@@ -47,7 +43,18 @@ namespace CRM_DAL.Services
             }
         }
 
-         
+        public async Task<bool> LogInUser(UserRequestDTO UserRequest)
+        {
+            try
+            {
+                var result = await _coderContext.Userrs.FirstAsync(u => u.UserNames == UserRequest.UserNames && u.Passwords == UserRequest.Passwords);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
 
     }

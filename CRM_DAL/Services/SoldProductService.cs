@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CRM_DAL.Services
 {
-    public class SoldProductData
+    public class SoldProductService
     {
         private readonly CoderContext _coderContext;
 
-        public SoldProductData()
+        public SoldProductService()
         {
             _coderContext = new CoderContext();
         }

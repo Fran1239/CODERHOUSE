@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreateAccount));
             buttonCreateAccount = new Button();
             panel1 = new Panel();
+            pictureBoxReturn = new PictureBox();
             pb_eyeOpen2 = new PictureBox();
             pb_eyeOpen1 = new PictureBox();
             pb_eyeClosed2 = new PictureBox();
@@ -45,6 +47,7 @@
             pBoxFondo = new PictureBox();
             pBoxFondo2 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxReturn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeClosed2).BeginInit();
@@ -75,6 +78,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(pictureBoxReturn);
             panel1.Controls.Add(pb_eyeOpen2);
             panel1.Controls.Add(pb_eyeOpen1);
             panel1.Controls.Add(pb_eyeClosed2);
@@ -96,13 +100,26 @@
             panel1.Size = new Size(1167, 700);
             panel1.TabIndex = 2;
             // 
+            // pictureBoxReturn
+            // 
+            pictureBoxReturn.Anchor = AnchorStyles.None;
+            pictureBoxReturn.BackColor = Color.Transparent;
+            pictureBoxReturn.Image = (Image)resources.GetObject("pictureBoxReturn.Image");
+            pictureBoxReturn.Location = new Point(192, 64);
+            pictureBoxReturn.Name = "pictureBoxReturn";
+            pictureBoxReturn.Size = new Size(44, 37);
+            pictureBoxReturn.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxReturn.TabIndex = 3;
+            pictureBoxReturn.TabStop = false;
+            pictureBoxReturn.Click += pictureBoxReturn_Click;
+            // 
             // pb_eyeOpen2
             // 
             pb_eyeOpen2.Anchor = AnchorStyles.None;
             pb_eyeOpen2.Image = Properties.Resources.ojo;
-            pb_eyeOpen2.Location = new Point(956, 457);
+            pb_eyeOpen2.Location = new Point(956, 462);
             pb_eyeOpen2.Name = "pb_eyeOpen2";
-            pb_eyeOpen2.Size = new Size(52, 39);
+            pb_eyeOpen2.Size = new Size(40, 30);
             pb_eyeOpen2.SizeMode = PictureBoxSizeMode.Zoom;
             pb_eyeOpen2.TabIndex = 14;
             pb_eyeOpen2.TabStop = false;
@@ -112,9 +129,9 @@
             // 
             pb_eyeOpen1.Anchor = AnchorStyles.None;
             pb_eyeOpen1.Image = Properties.Resources.ojo;
-            pb_eyeOpen1.Location = new Point(956, 362);
+            pb_eyeOpen1.Location = new Point(956, 367);
             pb_eyeOpen1.Name = "pb_eyeOpen1";
-            pb_eyeOpen1.Size = new Size(52, 39);
+            pb_eyeOpen1.Size = new Size(40, 30);
             pb_eyeOpen1.SizeMode = PictureBoxSizeMode.Zoom;
             pb_eyeOpen1.TabIndex = 13;
             pb_eyeOpen1.TabStop = false;
@@ -124,9 +141,9 @@
             // 
             pb_eyeClosed2.Anchor = AnchorStyles.None;
             pb_eyeClosed2.Image = Properties.Resources.esconder;
-            pb_eyeClosed2.Location = new Point(956, 457);
+            pb_eyeClosed2.Location = new Point(956, 462);
             pb_eyeClosed2.Name = "pb_eyeClosed2";
-            pb_eyeClosed2.Size = new Size(52, 39);
+            pb_eyeClosed2.Size = new Size(40, 30);
             pb_eyeClosed2.SizeMode = PictureBoxSizeMode.Zoom;
             pb_eyeClosed2.TabIndex = 12;
             pb_eyeClosed2.TabStop = false;
@@ -136,9 +153,9 @@
             // 
             pb_eyeClosed1.Anchor = AnchorStyles.None;
             pb_eyeClosed1.Image = Properties.Resources.esconder;
-            pb_eyeClosed1.Location = new Point(956, 362);
+            pb_eyeClosed1.Location = new Point(956, 367);
             pb_eyeClosed1.Name = "pb_eyeClosed1";
-            pb_eyeClosed1.Size = new Size(52, 39);
+            pb_eyeClosed1.Size = new Size(40, 30);
             pb_eyeClosed1.SizeMode = PictureBoxSizeMode.Zoom;
             pb_eyeClosed1.TabIndex = 11;
             pb_eyeClosed1.TabStop = false;
@@ -204,6 +221,7 @@
             tBoxName.Size = new Size(288, 31);
             tBoxName.TabIndex = 6;
             tBoxName.TextAlign = HorizontalAlignment.Center;
+            tBoxName.TextChanged += tBoxName_TextChanged;
             // 
             // tBoxUsername
             // 
@@ -281,6 +299,7 @@
             Load += FormCreateAccount_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxReturn).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeOpen1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_eyeClosed2).EndInit();
@@ -307,5 +326,6 @@
         private PictureBox pb_eyeOpen2;
         private PictureBox pb_eyeOpen1;
         private PictureBox pBoxFondo;
+        private PictureBox pictureBoxReturn;
     }
 }

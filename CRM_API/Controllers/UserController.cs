@@ -9,14 +9,14 @@ namespace CRM_API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private UserData userData;
+        private UserService userData;
 
         public UserController()
         {
-            this.userData = new UserData();
+            this.userData = new UserService();
         }
 
-        [HttpPost]
+        [HttpPost("create-user")]
         public async Task<IActionResult> CreateUser([FromBody]UserWriteDTO user)
         {
             if (!user.Passwords.Equals(user.ConfirmPassword))
@@ -25,11 +25,27 @@ namespace CRM_API.Controllers
             }
  
             var response = await userData.CreateAccountUser(user);
+
             if (!response) 
             {
                 return BadRequest("FAIL_CREATING_USER");
             }
             return Ok("SUCCESSFULLY_USER_CREATION");
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> LogInVerificationUser([FromBody] UserRequestDTO user)
+        {
+            var response = await userData.LogInUser(user);
+
+            if (!response)
+            {
+                return Unauthorized("INVALID_CREDENTIAL");
+            }
+            else 
+            {
+                return Ok("SUCCESSFULLY_LOGIN");
+            }
         }
     }
 }

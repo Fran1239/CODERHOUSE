@@ -93,7 +93,14 @@ namespace CRM_UI
 
         private void pictureBoxCerrarSesion_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
+            formMain.AbrirFormEnPanel(new FormLogIn());
+            if (formMain != null)
+            {
+                formMain.Show();
+                formMain.AbrirFormLogIn();
+            }
         }
 
     }
