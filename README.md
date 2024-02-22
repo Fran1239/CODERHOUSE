@@ -2,7 +2,7 @@
 
 <h2>Franco Bertinetti</h2>
 
-<h3>Sistema de Gestión o CRM - Realizado en C#, .NET y Entity Framework</h3>
+<h3>Sistema de Gestión / CRM - Realizado en C#, .NET y Entity Framework</h3>
 
 <h4>El proyecto posee un archivo Blank Solution llamado CRM_FrancoBertinetti.sln de alli se crearon las capas las cuales son:</h4>
 
