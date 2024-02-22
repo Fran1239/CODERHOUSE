@@ -7,7 +7,7 @@
 <h5>El proyecto posee un archivo Blank Solution llamado CRM_FrancoBertinetti.sln de alli se crearon las capas las cuales son:</h5>
 
 <h3>CRM_API</h3>
-<h5>Archivo ASP>NET Core Web Api, el cual posee la api del software y sus respectivos controllers.</h5>
+<h5>Archivo ASP.NET Core Web Api, el cual posee la api del software y sus respectivos controllers.</h5>
 <h3>CRM_DAL</h3>
 <h5>Archivo Class Library, el cual posee el backend del software, las carpetas "Database" con el codercontext, "Models" con las clases de mi base de datos, "DTO" con los datat transfer objects y "Services" con toda la logica del software.</h5>
 <h3>CRM_UI</h3>
