@@ -33,7 +33,7 @@ namespace CRM_DAL.Services
                 newUser.Emails = UserWrite.Emails;
                 newUser.Passwords = UserWrite.Passwords;
 
-                _coderContext.Userrs.Add(newUser);
+                _coderContext.Userrs.Add(newUser); 
                 await _coderContext.SaveChangesAsync();
                 return true;
             }

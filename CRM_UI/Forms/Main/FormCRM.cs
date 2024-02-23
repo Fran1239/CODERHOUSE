@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM_UI.Forms.Functionalities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,6 +102,73 @@ namespace CRM_UI
                 formMain.Show();
                 formMain.AbrirFormLogIn();
             }
+        }
+
+        private void buttonOrganizacion_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormOrganizacion());
+            hideMenue();
+        }
+
+        private void buttonGenerarVenta_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormCrearVenta());
+            hideMenue();
+        }
+
+        private void buttonConsultarVentas_Click(object sender, EventArgs e)
+        {
+            hideMenue();
+        }
+
+        private void buttonCargarProductos_Click(object sender, EventArgs e)
+        {
+            hideMenue();
+        }
+
+        private void buttonStock_Click(object sender, EventArgs e)
+        {
+            hideMenue();
+        }
+
+        private void buttonCargarUsuarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormCargarUsuario());
+            hideMenue();
+        }
+
+        private void buttonGestiondeUsuarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormGestionUsuarios());
+            hideMenue();
+        }
+
+        private void buttonPerfil_Click(object sender, EventArgs e)
+        {
+            hideMenue();
+        }
+
+        private void buttonConfiguracion_Click(object sender, EventArgs e)
+        {
+            hideMenue();
+        }
+
+        private Form? activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelFunctionalities.Controls.Add(childForm);
+            panelFunctionalities.Tag = childForm;
+            panelFunctionalities.BringToFront();
+            childForm.BringToFront();
+            childForm.Show();
+
+
         }
 
     }

@@ -1,5 +1,8 @@
 ﻿using CRM_DAL.Database;
+using CRM_DAL.DTO.Prouct_DTO;
 using CRM_DAL.Models;
+using System.Diagnostics;
+using static Azure.Core.HttpHeader;
 
 namespace CRM_DAL.Services
 {
@@ -18,17 +21,17 @@ namespace CRM_DAL.Services
         //crearproducto
         //modifiicarproducto
         //eliminarproducto
-        public async Task<bool> CreateProduct(string nombre, int stock, string description, decimal prices, decimal saleprices)
+        public async Task<bool> CreateProduct(ProductWriteDTO productWrite)
         {
             try
             {
                 Product newProduct = new Product();
 
-                newProduct.Names = nombre;
-                newProduct.Stock = stock;
-                newProduct.Descriptions = description;
-                newProduct.Prices = prices;
-                newProduct.SalePrices = saleprices;
+                newProduct.Names = productWrite.Names;
+                newProduct.Stock = productWrite.Stock;
+                newProduct.Descriptions = productWrite.Descriptions;
+                newProduct.Prices = productWrite.Prices;
+                newProduct.SalePrices = productWrite.SalePrices;
 
                 _coderContext.Products.Add(newProduct);
                 await _coderContext.SaveChangesAsync();

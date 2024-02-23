@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCRM));
             pBoxFondo1 = new Panel();
-            panelLogoGrande = new Panel();
+            panelChildForm = new Panel();
             label3 = new Label();
             label2 = new Label();
             pictureBox4 = new PictureBox();
+            panelFunctionalities = new Panel();
             panel2 = new Panel();
             pictureBoxCerrarSesion = new PictureBox();
             label4 = new Label();
             panel1 = new Panel();
             panelPerfil = new Panel();
             buttonPerfil = new Button();
-            button1 = new Button();
+            buttonConfiguracion = new Button();
             panelButtonsUsuarios = new Panel();
             buttonGestiondeUsuarios = new Button();
             buttonCargarUsuarios = new Button();
@@ -61,7 +62,7 @@
             labelTitulo2 = new Label();
             pictureBox2 = new PictureBox();
             pBoxFondo1.SuspendLayout();
-            panelLogoGrande.SuspendLayout();
+            panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCerrarSesion).BeginInit();
@@ -79,26 +80,27 @@
             // pBoxFondo1
             // 
             pBoxFondo1.BackColor = Color.Transparent;
-            pBoxFondo1.Controls.Add(panelLogoGrande);
+            pBoxFondo1.Controls.Add(panelChildForm);
             pBoxFondo1.Controls.Add(panel2);
             pBoxFondo1.Controls.Add(panel1);
             pBoxFondo1.Dock = DockStyle.Fill;
             pBoxFondo1.Location = new Point(0, 0);
             pBoxFondo1.Name = "pBoxFondo1";
-            pBoxFondo1.Size = new Size(1248, 728);
+            pBoxFondo1.Size = new Size(1224, 705);
             pBoxFondo1.TabIndex = 0;
             pBoxFondo1.Paint += pBoxFondo1_Paint;
             // 
-            // panelLogoGrande
+            // panelChildForm
             // 
-            panelLogoGrande.Controls.Add(label3);
-            panelLogoGrande.Controls.Add(label2);
-            panelLogoGrande.Controls.Add(pictureBox4);
-            panelLogoGrande.Dock = DockStyle.Fill;
-            panelLogoGrande.Location = new Point(250, 88);
-            panelLogoGrande.Name = "panelLogoGrande";
-            panelLogoGrande.Size = new Size(998, 640);
-            panelLogoGrande.TabIndex = 7;
+            panelChildForm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelChildForm.Controls.Add(label3);
+            panelChildForm.Controls.Add(label2);
+            panelChildForm.Controls.Add(pictureBox4);
+            panelChildForm.Controls.Add(panelFunctionalities);
+            panelChildForm.Location = new Point(250, 88);
+            panelChildForm.Name = "panelChildForm";
+            panelChildForm.Size = new Size(974, 617);
+            panelChildForm.TabIndex = 7;
             // 
             // label3
             // 
@@ -108,7 +110,7 @@
             label3.FlatStyle = FlatStyle.Flat;
             label3.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(402, 399);
+            label3.Location = new Point(371, 387);
             label3.Name = "label3";
             label3.Size = new Size(315, 39);
             label3.TabIndex = 7;
@@ -122,7 +124,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Century Gothic", 72F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(332, 298);
+            label2.Location = new Point(301, 286);
             label2.Name = "label2";
             label2.Size = new Size(457, 115);
             label2.TabIndex = 6;
@@ -132,12 +134,20 @@
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(122, 211);
+            pictureBox4.Location = new Point(91, 199);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(366, 227);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
+            // 
+            // panelFunctionalities
+            // 
+            panelFunctionalities.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelFunctionalities.Location = new Point(24, 19);
+            panelFunctionalities.Name = "panelFunctionalities";
+            panelFunctionalities.Size = new Size(925, 578);
+            panelFunctionalities.TabIndex = 8;
             // 
             // panel2
             // 
@@ -146,7 +156,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(250, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(998, 88);
+            panel2.Size = new Size(974, 88);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
@@ -154,7 +164,7 @@
             // 
             pictureBoxCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxCerrarSesion.Image = (Image)resources.GetObject("pictureBoxCerrarSesion.Image");
-            pictureBoxCerrarSesion.Location = new Point(898, 16);
+            pictureBoxCerrarSesion.Location = new Point(836, 16);
             pictureBoxCerrarSesion.Name = "pictureBoxCerrarSesion";
             pictureBoxCerrarSesion.Size = new Size(47, 42);
             pictureBoxCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,7 +180,7 @@
             label4.FlatStyle = FlatStyle.Flat;
             label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(876, 60);
+            label4.Location = new Point(814, 60);
             label4.Name = "label4";
             label4.Size = new Size(91, 17);
             label4.TabIndex = 5;
@@ -191,16 +201,16 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 728);
+            panel1.Size = new Size(250, 705);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // panelPerfil
             // 
             panelPerfil.Controls.Add(buttonPerfil);
-            panelPerfil.Controls.Add(button1);
+            panelPerfil.Controls.Add(buttonConfiguracion);
             panelPerfil.Dock = DockStyle.Bottom;
-            panelPerfil.Location = new Point(0, 605);
+            panelPerfil.Location = new Point(0, 582);
             panelPerfil.Name = "panelPerfil";
             panelPerfil.Size = new Size(250, 123);
             panelPerfil.TabIndex = 10;
@@ -223,24 +233,26 @@
             buttonPerfil.Text = "           Perfil";
             buttonPerfil.TextAlign = ContentAlignment.MiddleLeft;
             buttonPerfil.UseVisualStyleBackColor = true;
+            buttonPerfil.Click += buttonPerfil_Click;
             // 
-            // button1
+            // buttonConfiguracion
             // 
-            button1.Dock = DockStyle.Bottom;
-            button1.FlatAppearance.BorderColor = Color.FromArgb(222, 210, 208);
-            button1.FlatAppearance.MouseDownBackColor = Color.DarkSlateBlue;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(182, 180, 218);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 63);
-            button1.Name = "button1";
-            button1.Size = new Size(250, 60);
-            button1.TabIndex = 5;
-            button1.Text = "  Configuración";
-            button1.UseVisualStyleBackColor = true;
+            buttonConfiguracion.Dock = DockStyle.Bottom;
+            buttonConfiguracion.FlatAppearance.BorderColor = Color.FromArgb(222, 210, 208);
+            buttonConfiguracion.FlatAppearance.MouseDownBackColor = Color.DarkSlateBlue;
+            buttonConfiguracion.FlatAppearance.MouseOverBackColor = Color.FromArgb(182, 180, 218);
+            buttonConfiguracion.FlatStyle = FlatStyle.Flat;
+            buttonConfiguracion.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonConfiguracion.ForeColor = Color.White;
+            buttonConfiguracion.Image = (Image)resources.GetObject("buttonConfiguracion.Image");
+            buttonConfiguracion.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonConfiguracion.Location = new Point(0, 63);
+            buttonConfiguracion.Name = "buttonConfiguracion";
+            buttonConfiguracion.Size = new Size(250, 60);
+            buttonConfiguracion.TabIndex = 5;
+            buttonConfiguracion.Text = "  Configuración";
+            buttonConfiguracion.UseVisualStyleBackColor = true;
+            buttonConfiguracion.Click += buttonConfiguracion_Click;
             // 
             // panelButtonsUsuarios
             // 
@@ -269,6 +281,7 @@
             buttonGestiondeUsuarios.TabIndex = 1;
             buttonGestiondeUsuarios.Text = "Gestion de Usuarios";
             buttonGestiondeUsuarios.UseVisualStyleBackColor = false;
+            buttonGestiondeUsuarios.Click += buttonGestiondeUsuarios_Click;
             // 
             // buttonCargarUsuarios
             // 
@@ -287,6 +300,7 @@
             buttonCargarUsuarios.TabIndex = 0;
             buttonCargarUsuarios.Text = "Cargar Usuarios";
             buttonCargarUsuarios.UseVisualStyleBackColor = false;
+            buttonCargarUsuarios.Click += buttonCargarUsuarios_Click;
             // 
             // buttonUsuarios
             // 
@@ -335,6 +349,7 @@
             buttonStock.TabIndex = 1;
             buttonStock.Text = "Stock";
             buttonStock.UseVisualStyleBackColor = false;
+            buttonStock.Click += buttonStock_Click;
             // 
             // buttonCargarProductos
             // 
@@ -353,6 +368,7 @@
             buttonCargarProductos.TabIndex = 0;
             buttonCargarProductos.Text = "Cargar Productos";
             buttonCargarProductos.UseVisualStyleBackColor = false;
+            buttonCargarProductos.Click += buttonCargarProductos_Click;
             // 
             // buttonProductos
             // 
@@ -401,6 +417,7 @@
             buttonConsultarVentas.TabIndex = 1;
             buttonConsultarVentas.Text = "Consultas";
             buttonConsultarVentas.UseVisualStyleBackColor = false;
+            buttonConsultarVentas.Click += buttonConsultarVentas_Click;
             // 
             // buttonGenerarVenta
             // 
@@ -419,6 +436,7 @@
             buttonGenerarVenta.TabIndex = 0;
             buttonGenerarVenta.Text = "Generar Venta";
             buttonGenerarVenta.UseVisualStyleBackColor = false;
+            buttonGenerarVenta.Click += buttonGenerarVenta_Click;
             // 
             // buttonVentas
             // 
@@ -457,6 +475,7 @@
             buttonOrganizacion.TabIndex = 2;
             buttonOrganizacion.Text = "Organización";
             buttonOrganizacion.UseVisualStyleBackColor = true;
+            buttonOrganizacion.Click += buttonOrganizacion_Click;
             // 
             // panelLogo
             // 
@@ -529,13 +548,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1248, 728);
+            ClientSize = new Size(1224, 705);
             Controls.Add(pBoxFondo1);
             Name = "FormCRM";
             Text = "FormCRM";
             pBoxFondo1.ResumeLayout(false);
-            panelLogoGrande.ResumeLayout(false);
-            panelLogoGrande.PerformLayout();
+            panelChildForm.ResumeLayout(false);
+            panelChildForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -563,7 +582,7 @@
         private PictureBox pictureBox2;
         private Panel panelLogo;
         private Button buttonOrganizacion;
-        private Panel panelLogoGrande;
+        private Panel panelChildForm;
         private Label label2;
         private PictureBox pictureBox4;
         private Panel panel3;
@@ -584,8 +603,9 @@
         private Button buttonCargarUsuarios;
         private Panel panelPerfil;
         private Button buttonPerfil;
-        private Button button1;
+        private Button buttonConfiguracion;
         private PictureBox pictureBoxCerrarSesion;
         private Label label4;
+        private Panel panelFunctionalities;
     }
 }
