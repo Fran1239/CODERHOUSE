@@ -101,6 +101,7 @@
             panelChildForm.Name = "panelChildForm";
             panelChildForm.Size = new Size(974, 617);
             panelChildForm.TabIndex = 7;
+            panelChildForm.Paint += panelChildForm_Paint;
             // 
             // label3
             // 

@@ -27,7 +27,6 @@ namespace CRM_UI
 
         private async void buttonCreateAccount_Click(object sender, EventArgs e)
         {
-
             UserWriteDTO userWriteDTO = new UserWriteDTO();
             userWriteDTO.Names = tBoxName.Text;
             userWriteDTO.UserNames = tBoxUsername.Text;

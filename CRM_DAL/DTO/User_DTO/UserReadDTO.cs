@@ -8,6 +8,7 @@ namespace CRM_DAL.DTO.User_DTO
 {
     public class UserReadDTO
     {
+
         public Guid Id { get; set; }
 
         public string Names { get; set; }
@@ -18,8 +19,5 @@ namespace CRM_DAL.DTO.User_DTO
 
         public string Emails { get; set; }
 
-        public string Passwords { get; set; }
-
-        public string ConfirmPassword { get; set; }
     }
 }

@@ -68,6 +68,7 @@ namespace CRM_UI.Forms.Functionalities
                 string Json = JsonConvert.SerializeObject(userWriteDTO);
                 var data = await API_Connection.GetInstance().PostAsync(url, Json);
 
+
                 if (data.Contains("SUCCESSFULLY_USER_CREATION"))
                 {
                     MessageBox.Show("SUCCESSFULLY USER CREATION");

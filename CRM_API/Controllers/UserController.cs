@@ -1,4 +1,5 @@
 ﻿using CRM_DAL.DTO.User_DTO;
+using CRM_DAL.Models;
 using CRM_DAL.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,17 +17,37 @@ namespace CRM_API.Controllers
             this.userData = new UserService();
         }
 
-        [HttpPost("create-user")]
-        public async Task<IActionResult> CreateUser([FromBody]UserWriteDTO user)
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetUsername([FromRoute] string username)
+        {
+            var response = await userData.ReadUserInfo(username);
+            if(response == null)
+            {
+                return BadRequest("FAIL_LOCATING_USER");
+            }
+            else
+            {
+                return Ok(response);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateUser([FromBody] UserWriteDTO user)
         {
             if (!user.Passwords.Equals(user.ConfirmPassword))
             {
                 return BadRequest("PASSWORD_NOT_MATCH");
             }
- 
+
+            var isUsernameTaken = await userData.IsUsernameTaken(user.UserNames);
+            if (isUsernameTaken)
+            {
+                return BadRequest("USERNAME_ALREADY_EXISTS");
+            }
+
             var response = await userData.CreateAccountUser(user);
 
-            if (!response) 
+            if (!response)
             {
                 return BadRequest("FAIL_CREATING_USER");
             }
@@ -42,10 +63,50 @@ namespace CRM_API.Controllers
             {
                 return Unauthorized("INVALID_CREDENTIAL");
             }
-            else 
+            else
             {
                 return Ok("SUCCESSFULLY_LOGIN");
             }
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] string id)
+        {
+            var response = await userData.DeleteUserById(id);
+
+            if (id != null)
+            {
+                if (!response)
+                {
+                    return BadRequest("FAIL_DELETING_USER");
+                }
+                else
+                {
+                    return Ok("USER_SUCCESSFULLY_DELETED");
+                }
+            }
+            return BadRequest("INVALID_ID");
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> EditUser([FromRoute] string id, [FromBody] UserWriteDTO userWriteDTO)
+        {
+            var response = await userData.EditUserById(id, userWriteDTO);
+
+            if (id != null)
+            {
+                if (!response)
+                {
+                    return BadRequest("FAIL_EDITING_USER");
+                }
+                else
+                {
+                    return Ok("USER_SUCCESSFULLY_EDITED");
+                }
+            }
+            return BadRequest("INVALID_ID");
+        }
+        
+
     }
 }
