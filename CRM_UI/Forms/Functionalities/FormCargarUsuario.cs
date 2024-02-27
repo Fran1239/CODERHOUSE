@@ -18,6 +18,7 @@ namespace CRM_UI.Forms.Functionalities
         public FormCargarUsuario()
         {
             InitializeComponent();
+            labelHelp.Visible = false;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -32,6 +33,13 @@ namespace CRM_UI.Forms.Functionalities
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
+            formMain.AbrirFormEnPanel(new FormCRM());
+            if (formMain != null)
+            {
+                formMain.Show();
+                formMain.AbrirFormCRM();
+            }
         }
 
         private async void buttonCrearUsuario_Click(object sender, EventArgs e)
@@ -60,8 +68,9 @@ namespace CRM_UI.Forms.Functionalities
                 string Json = JsonConvert.SerializeObject(userWriteDTO);
                 var data = await API_Connection.GetInstance().PostAsync(url, Json);
 
-                if (data == "SUCCESSFULLY_USER_CREATION")
+                if (data.Contains("SUCCESSFULLY_USER_CREATION"))
                 {
+                    MessageBox.Show("SUCCESSFULLY USER CREATION");
                     this.Close();
                     FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
                     formMain.AbrirFormEnPanel(new FormCRM());
@@ -71,12 +80,34 @@ namespace CRM_UI.Forms.Functionalities
                         formMain.AbrirFormCRM();
                     }
                 }
+                else if (data.Contains("USERNAME_ALREADY_EXISTS"))
+                {
+                    MessageBox.Show("USERNAME ALREADY EXISTS");
+                }
                 else
                 {
                     MessageBox.Show("FAIL CREATING USER");
                 }
-
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            Color colorFondo = ColorTranslator.FromHtml("#b6b4da");
+            using (SolidBrush brush = new SolidBrush(colorFondo))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+        }
+
+        private void tBoxEmal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxHelp_Click(object sender, EventArgs e)
+        {
+            labelHelp.Visible = true;
         }
     }
 }

@@ -164,7 +164,7 @@
             // 
             pictureBoxCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxCerrarSesion.Image = (Image)resources.GetObject("pictureBoxCerrarSesion.Image");
-            pictureBoxCerrarSesion.Location = new Point(836, 16);
+            pictureBoxCerrarSesion.Location = new Point(871, 16);
             pictureBoxCerrarSesion.Name = "pictureBoxCerrarSesion";
             pictureBoxCerrarSesion.Size = new Size(47, 42);
             pictureBoxCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -180,7 +180,7 @@
             label4.FlatStyle = FlatStyle.Flat;
             label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(814, 60);
+            label4.Location = new Point(849, 60);
             label4.Name = "label4";
             label4.Size = new Size(91, 17);
             label4.TabIndex = 5;
@@ -279,7 +279,7 @@
             buttonGestiondeUsuarios.Name = "buttonGestiondeUsuarios";
             buttonGestiondeUsuarios.Size = new Size(250, 40);
             buttonGestiondeUsuarios.TabIndex = 1;
-            buttonGestiondeUsuarios.Text = "Gestion de Usuarios";
+            buttonGestiondeUsuarios.Text = "Gestión de Usuarios";
             buttonGestiondeUsuarios.UseVisualStyleBackColor = false;
             buttonGestiondeUsuarios.Click += buttonGestiondeUsuarios_Click;
             // 
@@ -298,7 +298,7 @@
             buttonCargarUsuarios.Name = "buttonCargarUsuarios";
             buttonCargarUsuarios.Size = new Size(250, 40);
             buttonCargarUsuarios.TabIndex = 0;
-            buttonCargarUsuarios.Text = "Cargar Usuarios";
+            buttonCargarUsuarios.Text = "Creación Usuarios";
             buttonCargarUsuarios.UseVisualStyleBackColor = false;
             buttonCargarUsuarios.Click += buttonCargarUsuarios_Click;
             // 
@@ -366,7 +366,7 @@
             buttonCargarProductos.Name = "buttonCargarProductos";
             buttonCargarProductos.Size = new Size(250, 40);
             buttonCargarProductos.TabIndex = 0;
-            buttonCargarProductos.Text = "Cargar Productos";
+            buttonCargarProductos.Text = "Creación de Productos";
             buttonCargarProductos.UseVisualStyleBackColor = false;
             buttonCargarProductos.Click += buttonCargarProductos_Click;
             // 

@@ -27,6 +27,7 @@ namespace CRM_UI
 
         private async void buttonCreateAccount_Click(object sender, EventArgs e)
         {
+
             UserWriteDTO userWriteDTO = new UserWriteDTO();
             userWriteDTO.Names = tBoxName.Text;
             userWriteDTO.UserNames = tBoxUsername.Text;
@@ -51,8 +52,10 @@ namespace CRM_UI
                 string Json = JsonConvert.SerializeObject(userWriteDTO);
                 var data = await API_Connection.GetInstance().PostAsync(url, Json);
 
-                if (data == "SUCCESSFULLY_USER_CREATION")
+
+                if (data.Contains("SUCCESSFULLY_USER_CREATION"))
                 {
+                    MessageBox.Show("SUCCESSFULLY USER CREATION");
                     this.Close();
                     FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
                     formMain.AbrirFormEnPanel(new FormCRM());
@@ -62,11 +65,14 @@ namespace CRM_UI
                         formMain.AbrirFormCRM();
                     }
                 }
+                else if (data.Contains("USERNAME_ALREADY_EXISTS"))
+                {
+                    MessageBox.Show("USERNAME ALREADY EXISTS");
+                }
                 else
                 {
                     MessageBox.Show("FAIL CREATING USER");
                 }
-
             }
         }
 

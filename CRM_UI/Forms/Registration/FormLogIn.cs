@@ -48,7 +48,7 @@ namespace CRM_UI
             string Json = JsonConvert.SerializeObject(userRequestDTO);
             var data = await API_Connection.GetInstance().PostAsync(url, Json);
 
-            if (data == "SUCCESSFULLY_LOGIN")
+            if (data.Contains("SUCCESSFULLY_LOGIN"))
             {
                 this.Close();
                 FormMain formMain = Application.OpenForms.OfType<FormMain>().FirstOrDefault();
