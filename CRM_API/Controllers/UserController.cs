@@ -69,12 +69,12 @@ namespace CRM_API.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser([FromRoute] string id)
+        [HttpDelete("{username}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] string username)
         {
-            var response = await userData.DeleteUserById(id);
+            var response = await userData.DeleteUserByUsername(username);
 
-            if (id != null)
+            if (username != null)
             {
                 if (!response)
                 {
@@ -85,7 +85,7 @@ namespace CRM_API.Controllers
                     return Ok("USER_SUCCESSFULLY_DELETED");
                 }
             }
-            return BadRequest("INVALID_ID");
+            return BadRequest("INVALID_USERNAME");
         }
 
         [HttpPut("{id}")]

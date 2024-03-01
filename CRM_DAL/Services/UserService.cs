@@ -94,12 +94,11 @@ namespace CRM_DAL.Services
             }
         }
 
-        public async Task<bool> DeleteUserById(string id)
+        public async Task<bool> DeleteUserByUsername(string username)
         {
             try
             {
-                Guid userId = new Guid(id);
-                Userr? user = await _coderContext.Userrs.FirstOrDefaultAsync(u => u.Id == userId);
+                Userr? user = await _coderContext.Userrs.FirstOrDefaultAsync(u => u.UserNames == username);
 
                 if (user != null)
                 {
@@ -167,5 +166,7 @@ namespace CRM_DAL.Services
                 return null;
             }
         }
+
+
     }
 }

@@ -64,7 +64,7 @@ namespace CRM_UI.Forms.Functionalities
             }
             else
             {
-                string url = "https://localhost:7005/api/User/create-user";
+                string url = "https://localhost:7005/api/User";
                 string Json = JsonConvert.SerializeObject(userWriteDTO);
                 var data = await API_Connection.GetInstance().PostAsync(url, Json);
 

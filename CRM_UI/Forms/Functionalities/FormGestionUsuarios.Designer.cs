@@ -39,7 +39,7 @@
             textBoxLastName = new TextBox();
             textBoxUserName = new TextBox();
             tBoxName = new TextBox();
-            buttonGuardarDelete = new Button();
+            buttonGuardarEdit = new Button();
             button1 = new Button();
             label1 = new Label();
             panelEliminar = new Panel();
@@ -140,12 +140,12 @@
             panelEditar.Controls.Add(textBoxLastName);
             panelEditar.Controls.Add(textBoxUserName);
             panelEditar.Controls.Add(tBoxName);
-            panelEditar.Controls.Add(buttonGuardarDelete);
+            panelEditar.Controls.Add(buttonGuardarEdit);
             panelEditar.Controls.Add(button1);
             panelEditar.Controls.Add(label1);
             panelEditar.Location = new Point(228, 72);
             panelEditar.Name = "panelEditar";
-            panelEditar.Size = new Size(692, 389);
+            panelEditar.Size = new Size(692, 417);
             panelEditar.TabIndex = 6;
             panelEditar.Paint += panelEditar_Paint;
             // 
@@ -154,7 +154,7 @@
             textBoxEmail.Anchor = AnchorStyles.None;
             textBoxEmail.BackColor = Color.Lavender;
             textBoxEmail.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmail.Location = new Point(382, 202);
+            textBoxEmail.Location = new Point(382, 216);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.PlaceholderText = "Email";
             textBoxEmail.Size = new Size(288, 31);
@@ -166,7 +166,7 @@
             textBoxLastName.Anchor = AnchorStyles.None;
             textBoxLastName.BackColor = Color.Lavender;
             textBoxLastName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLastName.Location = new Point(382, 137);
+            textBoxLastName.Location = new Point(382, 151);
             textBoxLastName.Name = "textBoxLastName";
             textBoxLastName.PlaceholderText = "Last Name";
             textBoxLastName.Size = new Size(288, 31);
@@ -178,7 +178,7 @@
             textBoxUserName.Anchor = AnchorStyles.None;
             textBoxUserName.BackColor = Color.Lavender;
             textBoxUserName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxUserName.Location = new Point(22, 202);
+            textBoxUserName.Location = new Point(22, 216);
             textBoxUserName.Name = "textBoxUserName";
             textBoxUserName.PlaceholderText = "Username";
             textBoxUserName.Size = new Size(288, 31);
@@ -190,30 +190,32 @@
             tBoxName.Anchor = AnchorStyles.None;
             tBoxName.BackColor = Color.Lavender;
             tBoxName.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tBoxName.Location = new Point(22, 137);
+            tBoxName.Location = new Point(22, 151);
             tBoxName.Name = "tBoxName";
             tBoxName.PlaceholderText = "Name";
             tBoxName.Size = new Size(288, 31);
             tBoxName.TabIndex = 7;
             tBoxName.TextAlign = HorizontalAlignment.Center;
+            tBoxName.TextChanged += tBoxName_TextChanged;
             // 
-            // buttonGuardarDelete
+            // buttonGuardarEdit
             // 
-            buttonGuardarDelete.Anchor = AnchorStyles.None;
-            buttonGuardarDelete.BackColor = Color.Lavender;
-            buttonGuardarDelete.FlatAppearance.BorderColor = Color.White;
-            buttonGuardarDelete.FlatAppearance.BorderSize = 2;
-            buttonGuardarDelete.FlatAppearance.MouseDownBackColor = Color.White;
-            buttonGuardarDelete.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
-            buttonGuardarDelete.FlatStyle = FlatStyle.Flat;
-            buttonGuardarDelete.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonGuardarDelete.ForeColor = Color.SlateBlue;
-            buttonGuardarDelete.Location = new Point(363, 269);
-            buttonGuardarDelete.Name = "buttonGuardarDelete";
-            buttonGuardarDelete.Size = new Size(200, 47);
-            buttonGuardarDelete.TabIndex = 4;
-            buttonGuardarDelete.Text = "Confirmar y Cerrar";
-            buttonGuardarDelete.UseVisualStyleBackColor = false;
+            buttonGuardarEdit.Anchor = AnchorStyles.None;
+            buttonGuardarEdit.BackColor = Color.Lavender;
+            buttonGuardarEdit.FlatAppearance.BorderColor = Color.White;
+            buttonGuardarEdit.FlatAppearance.BorderSize = 2;
+            buttonGuardarEdit.FlatAppearance.MouseDownBackColor = Color.White;
+            buttonGuardarEdit.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 192, 255);
+            buttonGuardarEdit.FlatStyle = FlatStyle.Flat;
+            buttonGuardarEdit.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonGuardarEdit.ForeColor = Color.SlateBlue;
+            buttonGuardarEdit.Location = new Point(363, 283);
+            buttonGuardarEdit.Name = "buttonGuardarEdit";
+            buttonGuardarEdit.Size = new Size(200, 47);
+            buttonGuardarEdit.TabIndex = 4;
+            buttonGuardarEdit.Text = "Confirmar y Cerrar";
+            buttonGuardarEdit.UseVisualStyleBackColor = false;
+            buttonGuardarEdit.Click += buttonGuardarEdit_Click;
             // 
             // button1
             // 
@@ -226,7 +228,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.SlateBlue;
-            button1.Location = new Point(126, 269);
+            button1.Location = new Point(126, 283);
             button1.Name = "button1";
             button1.Size = new Size(200, 47);
             button1.TabIndex = 3;
@@ -240,7 +242,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(60, 71);
+            label1.Location = new Point(60, 85);
             label1.Name = "label1";
             label1.Size = new Size(574, 44);
             label1.TabIndex = 0;
@@ -328,6 +330,7 @@
             dataGridView1.ScrollBars = ScrollBars.Vertical;
             dataGridView1.Size = new Size(1147, 540);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellClick += dataGridView1_CellContentClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellPainting += grid_CellPainting;
             // 
@@ -466,5 +469,6 @@
         private TextBox textBoxUserName;
         private TextBox tBoxName;
         private PictureBox pictureBox2;
+        private Button buttonGuardarEdit;
     }
 }
