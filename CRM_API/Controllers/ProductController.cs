@@ -1,4 +1,7 @@
-﻿using CRM_DAL.DTO.User_DTO;
+﻿using CRM_DAL.Database;
+using CRM_DAL.DTO.Prouct_DTO;
+using CRM_DAL.DTO.User_DTO;
+using CRM_DAL.Models;
 using CRM_DAL.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,12 +18,25 @@ namespace CRM_API.Controllers
             this.productData = new ProductService();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CreateProduct()
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct([FromBody] ProductWriteDTO product)
         {
-            return Ok();
+            var isNameTaken = await productData.IsNameTaken(product.Names);
+            if (isNameTaken)
+            {
+                return BadRequest("NAME_ALREADY_EXISTS");
+            }
+
+            var response = await productData.LoadProduct(product);
+
+            if (!response)
+            {
+                return BadRequest("FAIL_CREATING_PRODUCT");
+            }
+            return Ok("SUCCESSFULLY_PRODUCT_CREATION");
         }
 
+    
 
     }
 }
